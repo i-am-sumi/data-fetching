@@ -22,8 +22,6 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
 `;
-
-// fetch(url)
 const productsWrapper = document.querySelector('.products');
 
 const createProducts = (result) => {
@@ -32,23 +30,15 @@ const createProducts = (result) => {
   products.forEach((product) => {
     const { title, images, price } = product;
 
-    const paragraph = document.createElement('p');
-    paragraph.innerHTML = title;
+    const card = `<div class="products--card">
+                    <img src="${images[0]}" alt="">
+                    <p>${title}</p>
+                    <span>Price: ${price}</span>
+                 </div>`;
 
-    const imgElement = document.createElement('img');
-    imgElement.src = images[0];
-    imgElement.style.height = '200px';
-    imgElement.style.width = '200px';
-
-    const card = document.createElement('div');
-    card.classList.add('products--card');
-    card.appendChild(imgElement);
-    card.appendChild(paragraph);
-
-    const priceElement = document.createElement('span');
-    priceElement.innerHTML = `Price : ${price}`;
-    card.appendChild(priceElement);
-    productsWrapper.appendChild(card);
+    const node = document.createElement('div');
+    node.innerHTML = card;
+    productsWrapper.appendChild(node);
   });
 };
 
