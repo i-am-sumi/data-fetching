@@ -11,6 +11,10 @@ export const nav = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
         <li class="nav-item">
           <a class="nav-link" href="/pages/posts/index.html">Posts</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/user/index.html">User</a>
+        </li> 
       </ul>
     </div>
   </div>
