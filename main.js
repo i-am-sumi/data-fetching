@@ -27,19 +27,16 @@ const productsWrapper = document.querySelector('.products');
 const createProducts = (result) => {
   const { products } = result;
 
-  products.forEach((product) => {
+  const cards = products.map((product) => {
     const { title, images, price } = product;
 
-    const card = `<div class="products--card">
+    return `<div class="products--card">
                     <img src="${images[0]}" alt="">
                     <p>${title}</p>
                     <span>Price: ${price}</span>
                  </div>`;
-
-    const node = document.createElement('div');
-    node.innerHTML = card;
-    productsWrapper.appendChild(node);
   });
+  productsWrapper.innerHTML = cards.join('\n');
 };
 
 fetch('https://dummyjson.com/products')
