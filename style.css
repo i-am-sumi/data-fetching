@@ -108,3 +108,7 @@ button:focus-visible {
   box-shadow: 2px 2px;
   flex-basis: 32.33%;
 }
+.products--card img {
+  height: 200px;
+  width: 200px;
+}
