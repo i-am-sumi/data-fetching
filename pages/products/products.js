@@ -1,12 +1,13 @@
-import './style.css';
-import { setupCounter } from './counter.js';
-import { nav } from './components/nav.js';
+import '../../style.css';
+import { nav } from '../../components/nav';
 
 document.querySelector('#app').innerHTML = `
   <div>
-  ${nav}
+   ${nav}
+ <div class="products"></div>
   </div>
 `;
+
 const productsWrapper = document.querySelector('.products');
 
 const createProducts = (result) => {
@@ -29,5 +30,3 @@ fetch('https://dummyjson.com/products')
   .then((value) => {
     createProducts(value);
   });
-
-setupCounter(document.querySelector('#counter'));
