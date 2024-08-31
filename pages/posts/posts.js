@@ -1,5 +1,6 @@
-import { nav } from '../../components/nav';
 import '../../style.css';
+import { nav } from '../../components/nav';
+import { createPagination } from '../../components/pagination';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -25,8 +26,10 @@ const createPosts = (result) => {
   postWrapper.innerHTML = cards.join('\n');
 };
 
-fetch('https://dummyjson.com/posts')
+fetch('https://dummyjson.com/posts?limit=6&skip=0')
   .then((result) => result.json())
   .then((value) => {
     createPosts(value);
   });
+
+createPagination('posts', createPosts);

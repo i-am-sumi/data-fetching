@@ -1,5 +1,6 @@
 import '../../style.css';
 import { nav } from '../../components/nav';
+import { createPagination } from '../../components/pagination';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -25,8 +26,10 @@ const createProducts = (result) => {
   productsWrapper.innerHTML = cards.join('\n');
 };
 
-fetch('https://dummyjson.com/products')
+fetch('https://dummyjson.com/products?limit=6&skip=0')
   .then((result) => result.json())
   .then((value) => {
     createProducts(value);
   });
+
+createPagination('products', createProducts);
