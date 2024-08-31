@@ -95,7 +95,8 @@ button:focus-visible {
 }
 
 .products,
-.posts {
+.posts,
+.users {
   display: flex;
   max-width: 1200px;
   flex-wrap: wrap;
@@ -104,7 +105,8 @@ button:focus-visible {
 }
 
 .products--card,
-.posts--card {
+.posts--card,
+.users--card {
   border: 1px solid;
   box-shadow: 2px 2px;
   flex-basis: 32.33%;
@@ -112,4 +114,7 @@ button:focus-visible {
 .products--card img {
   height: 200px;
   width: 200px;
+}
+.users--card {
+  padding: 20px;
 }
