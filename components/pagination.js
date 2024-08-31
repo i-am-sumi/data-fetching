@@ -6,8 +6,8 @@ export const createPagination = (route, callback) => {
   nextButton.innerText = '>>';
 
   nextButton.addEventListener('click', () => {
-    skip += 6;
-    fetch(`https://dummyjson.com/${route}?limit=6&skip=${skip}`)
+    skip += 10;
+    fetch(`https://dummyjson.com/${route}?limit=10&skip=${skip}`)
       .then((result) => result.json())
       .then((value) => {
         callback(value);
@@ -20,10 +20,10 @@ export const createPagination = (route, callback) => {
 
   previousButton.addEventListener('click', () => {
     if (skip > 0) {
-      skip -= 6;
+      skip -= 10;
     }
 
-    fetch(`https://dummyjson.com/${route}?limit=6&skip=${skip}`)
+    fetch(`https://dummyjson.com/${route}?limit=10&skip=${skip}`)
       .then((result) => result.json())
       .then((value) => {
         callback(value);
