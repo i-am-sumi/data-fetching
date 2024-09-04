@@ -1,15 +1,15 @@
-import '../../style.css';
-import { nav } from '../../components/nav';
-import { createPagination } from '../../components/pagination';
+import "../../style.css";
+import { nav } from "../../components/nav";
+import { createPagination } from "../../components/pagination";
 
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
   <div>
    ${nav}
  <div class="products"></div>
   </div>
 `;
 
-const productsWrapper = document.querySelector('.products');
+const productsWrapper = document.querySelector(".products");
 
 const createProducts = (result) => {
   const { products } = result;
@@ -25,13 +25,13 @@ const createProducts = (result) => {
                  </div>
     </a>`;
   });
-  productsWrapper.innerHTML = cards.join('\n');
+  productsWrapper.innerHTML = cards.join("\n");
 };
 
-fetch('https://dummyjson.com/products?limit=10&skip=0')
+fetch("https://dummyjson.com/products?limit=10&skip=0")
   .then((result) => result.json())
   .then((value) => {
     createProducts(value);
   });
 
-createPagination('products', createProducts);
+createPagination("products", createProducts);

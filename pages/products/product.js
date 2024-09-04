@@ -1,14 +1,14 @@
-import '../../style.css';
-import { nav } from '../../components/nav';
+import "../../style.css";
+import { nav } from "../../components/nav";
 
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
   <div>
    ${nav}
  <div class="product"></div>
   </div>
 `;
 
-const productWrapper = document.querySelector('.product');
+const productWrapper = document.querySelector(".product");
 
 const createProduct = (product) => {
   const { images, title, description, meta, reviews } = product;
@@ -24,7 +24,7 @@ const createProduct = (product) => {
       const reviewData = new Date(date);
 
       return `
-	  <div class='mb-4 text-start'>
+<div class='mb-4 text-start'>
 	   <p> ${reviewerName} ${reviewData.toDateString()}</p>
 			<p>${comment}</p>
 	  </div>
@@ -32,7 +32,7 @@ const createProduct = (product) => {
 	 
 	`;
     })
-    .join('\n');
+    .join("\n");
 
   const details = `<div>
 	<img src="${images[0]}" style='max-width: 100%'/>
@@ -50,7 +50,7 @@ const createProduct = (product) => {
   productWrapper.innerHTML = details;
 };
 
-const id = location.href.split('=')[1];
+const id = location.href.split("=")[1];
 
 fetch(`https://dummyjson.com/products/${id}`)
   .then((result) => result.json())
